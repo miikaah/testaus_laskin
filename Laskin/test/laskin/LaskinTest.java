@@ -2,7 +2,6 @@ package laskin;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 // Luokan nimen loppu pitää olla Test
@@ -29,14 +28,14 @@ public class LaskinTest {
     public void testVahenna() {
         laskin.lisaa(10);
         laskin.vahenna(2);
-        assertEquals("10 - 2 ", laskin.annaTulos(), 8);
+        assertEquals("10 - 2 ", 8, laskin.annaTulos());
     }
 
     @Test
     public void testJaa() {
         laskin.lisaa(8);
         laskin.jaa(2);
-        assert laskin.annaTulos() == 5;
+        assert laskin.annaTulos() == 4;
     }
 
     // Nollalla jaon pitäisi heittää poikkeus
@@ -45,9 +44,7 @@ public class LaskinTest {
         laskin.jaa(0);
     }
 
-    // Tätä testiä ei haluta vielä ajaa
     @Test
-    @Ignore("Metodi multiply() on vielä toteuttamatta.")
     public void testKerro() {
         laskin.lisaa(10);
         laskin.kerro(10);

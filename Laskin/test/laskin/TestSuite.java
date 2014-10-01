@@ -9,7 +9,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     laskin.LaskinTest.class,
-    laskin.NelioTest.class
+    laskin.NelioTest.class,
+    laskin.ExtraTest.class
 })
 
 public class TestSuite {

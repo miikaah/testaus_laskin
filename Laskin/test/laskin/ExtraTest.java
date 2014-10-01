@@ -32,7 +32,7 @@ public class ExtraTest extends AbstractParent {
 
     // Aseta testille maksimi kestoaika
     @Test(timeout = 1000)
-    public void testNeliojuuri2() {
+    public void testNeliojuuri2() throws NegativeSquareRootException {
         laskin.neliojuuri(2);
     }
 
@@ -54,4 +54,8 @@ public class ExtraTest extends AbstractParent {
         assertEquals("nelio(5) ", 25, laskin.annaTulos());
     }
 
+    @Test(expected = NegativeSquareRootException.class)
+    public void testNegNeliojuuri() throws NegativeSquareRootException {
+        laskin.neliojuuri(-1);
+    }
 }

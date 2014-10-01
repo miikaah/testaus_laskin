@@ -31,5 +31,8 @@ public class Main {
 
         laskin.virtaOFF();
         System.out.println("...Katkaistaan virta...");
+        
+        laskin.nelio(-1);
+        System.out.println("neliojuuri neg: " + laskin.annaTulos());
     }
 }

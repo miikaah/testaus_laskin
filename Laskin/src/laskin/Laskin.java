@@ -1,9 +1,16 @@
 package laskin;
 
+class NegativeSquareRootException extends Exception {
+
+    NegativeSquareRootException(String message) {
+        super(message);
+    }
+}
+
 public class Laskin {
 
     private static int tulos;  // Muuttuja tulokselle
-    
+
     public void nollaa() {     // Nollaa tuloksen
         tulos = 0;
     }
@@ -11,20 +18,20 @@ public class Laskin {
     public int annaTulos() {
         return tulos;
     }
-    
+
     public void lisaa(int n) {
         tulos = tulos + n;
     }
 
     public void vahenna(int n) {
-        tulos = tulos - 1;     // Bugi
+        tulos -= n;
     }
 
     public void kerro(int n) {
-        // Ei vielä toteutettu
+        tulos = tulos * n;
     }
 
-    public void jaa(int n) {
+    public void jaa(int n) throws ArithmeticException {
         tulos = tulos / n;
     }
 
@@ -32,10 +39,14 @@ public class Laskin {
         tulos = n * n;
     }
 
-    public void neliojuuri(int n) {
-        for (;;) ;           // Bugi
+    public void neliojuuri(int n) throws NegativeSquareRootException {
+        if (n < 0) {
+            throw new NegativeSquareRootException("Ei voi ottaa neliöjuurta negatiivisesta luvusta.");
+        } else {
+            tulos = (int) Math.sqrt((double) n);
+        }
     }
-    
+
     public void virtaON() {
         // Tähän voisi laittaa alkutoimet
         tulos = 0;
