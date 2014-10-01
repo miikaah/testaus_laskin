@@ -1,5 +1,7 @@
 package laskin;
 
+import static java.lang.Double.NaN;
+
 class NegativeSquareRootException extends Exception {
 
     NegativeSquareRootException(String message) {
@@ -33,6 +35,9 @@ public class Laskin {
 
     public void jaa(double n) throws ArithmeticException {
         tulos = tulos / n;
+        if (Double.isInfinite(tulos) || Double.isNaN(tulos)) {
+            throw new ArithmeticException("Divide by floating-point 0.0");
+        }
     }
 
     public void nelio(double n) {

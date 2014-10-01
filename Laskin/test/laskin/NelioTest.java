@@ -43,6 +43,6 @@ public class NelioTest {
     public void testNelio() {
         String messu = luku + " * " + luku;
         laskin.nelio(luku);
-        assertEquals(messu, tulos, laskin.annaTulos());
+        assertEquals(messu, tulos, laskin.annaTulos(), 0);
     }
 }
