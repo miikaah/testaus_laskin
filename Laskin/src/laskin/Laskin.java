@@ -9,37 +9,37 @@ class NegativeSquareRootException extends Exception {
 
 public class Laskin {
 
-    private static int tulos;  // Muuttuja tulokselle
+    private static double tulos;  // Muuttuja tulokselle
 
     public void nollaa() {     // Nollaa tuloksen
         tulos = 0;
     }
 
-    public int annaTulos() {
+    public double annaTulos() {
         return tulos;
     }
 
-    public void lisaa(int n) {
+    public void lisaa(double n) {
         tulos = tulos + n;
     }
 
-    public void vahenna(int n) {
+    public void vahenna(double n) {
         tulos -= n;
     }
 
-    public void kerro(int n) {
+    public void kerro(double n) {
         tulos = tulos * n;
     }
 
-    public void jaa(int n) throws ArithmeticException {
+    public void jaa(double n) throws ArithmeticException {
         tulos = tulos / n;
     }
 
-    public void nelio(int n) {
+    public void nelio(double n) {
         tulos = n * n;
     }
 
-    public void neliojuuri(int n) throws NegativeSquareRootException {
+    public void neliojuuri(double n) throws NegativeSquareRootException {
         if (n < 0) {
             throw new NegativeSquareRootException("Ei voi ottaa neliöjuurta negatiivisesta luvusta.");
         } else {
